@@ -11,14 +11,13 @@ public class PathTransformer extends StubRequestFilter {
 
     @Override
     public RequestFilterAction filter(Request request) {
-        String PATH = "/demand";
+        String PATH = "/scm/order-planning-service";
+        boolean useLocalEnv = request.getAbsoluteUrl().contains(PATH);
         Request wrappedRequest = RequestWrapper
                 .create()
-                .transformAbsoluteUrl(url -> url.replace("/scm", ""))
+                .transformAbsoluteUrl(url -> url.replace(PATH, ""))
                 .wrap(request);
-        return continueWith(request.getAbsoluteUrl().contains(PATH) ?
-                wrappedRequest :
-                request);
+        return continueWith(useLocalEnv ? wrappedRequest : request);
     }
 
     @Override
