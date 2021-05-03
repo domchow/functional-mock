@@ -1,0 +1,9 @@
+{
+  "priority": 1,
+  "request": {
+    "urlPattern": ".*/demand"
+  },
+  "response": {
+    "proxyBaseUrl" : "http://order-planning-service:8080"
+  }
+}
