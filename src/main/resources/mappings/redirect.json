@@ -1,0 +1,9 @@
+{
+  "priority": 2,
+  "request": {
+    "urlPattern": "/.*"
+  },
+  "response": {
+    "proxyBaseUrl" : "https://staging-operations.hellofresh.com/gw"
+  }
+}
